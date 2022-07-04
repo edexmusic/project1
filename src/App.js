@@ -5,18 +5,13 @@ import Account from "./components/todo/account";
 import {Component} from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Login from "./components/login/login";
+import React from "react";
 
 export default class App extends Component {
     maxId = 0;
 
     state = {
-        todoData: [
-            this.createTodoItem('Lorem ipsum dolor sit amet'),
-            this.createTodoItem('Ad dolore dignissimos asperiores dicta facere optio'),
-            this.createTodoItem('Rerum sed nulla eum vero'),
-            this.createTodoItem('Qui dicta minus molestiae'),
-            this.createTodoItem('Ratione temporibus aperiam harum'),
-        ],
+        todoData: [],
         term: '',
         isLoggedIn: false
     }

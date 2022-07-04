@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Navigate} from "react-router-dom";
 
 import "./login.css";
@@ -7,36 +7,101 @@ const Login = ({isLoggedIn, onLogin}) => {
 
     const [value, setValue] = React.useState('');
 
-    const handleChange = (event) => {
-        setValue(event.target.value);
+    const [errorMessages, setErrorMessages] = useState({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    // User Login info
+    const database = [
+        {
+            email: "admin@admin.com",
+            password: "admin"
+        },
+        {
+            email: "admin2@admin.com",
+            password: "admin2"
+        }
+    ];
+
+    const errors = {
+        uemail: "invalid email",
+        pass: "invalid password"
     };
 
-    if (isLoggedIn) {
-        return <Navigate to='/todo-app'/>
-    } else {
-        return (
-            <div className='container'>
-                <div className='login-form d-flex'>
-                    <form>
-                        <div className="form-group">
-                            <label htmlFor="exampleInputEmail1">Email address</label>
-                            <input required type="email" className="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp" placeholder="Enter email"/>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="exampleInputPassword1">Password</label>
-                            <input value={value} onChange={handleChange} required type="password"
-                                   className="form-control" id="exampleInputPassword1"
-                                   placeholder="Password"/>
-                        </div>
-                        <button disabled={!value} type="submit" className="btn btn-secondary submit-button"
-                                onClick={onLogin}>Login
-                        </button>
-                    </form>
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const {uemail, pass} = document.forms[0];
+
+        const userData = database.find((user) => user.email === uemail.value);
+
+        if (userData) {
+            if (userData.password !== pass.value) {
+                setErrorMessages({name: "pass", message: errors.pass});
+            } else {
+                setIsSubmitted(true);
+            }
+        } else {
+            setErrorMessages({name: "uemail", message: errors.uemail});
+        }
+    };
+
+    const renderErrorMessage = (name) =>
+        name === errorMessages.name && (
+            <div className="error">{errorMessages.message}</div>
+        );
+
+    const renderForm = (
+        <div className="form">
+            <div className="title">Sign In</div>
+            <form onSubmit={handleSubmit}>
+                <div className="input-container">
+                    <input type="email" name="uemail" required placeholder='Email'/>
                 </div>
+                <div className="input-container">
+                    <input type="password" name="pass" required placeholder='Password'/>
+                    {renderErrorMessage("uemail")}
+                    {renderErrorMessage("pass")}
+                </div>
+                <div className="button-container">
+                    <button type="submit" className='btn btn-outline-secondary'>Login</button>
+                </div>
+            </form>
+        </div>
+    );
+
+    return (
+        <div className="login-container">
+            <div className="login-form">
+                {isSubmitted ? <div>Succesfully logged in!</div> : renderForm}
             </div>
-        )
-    }
+        </div>
+    );
+
+// if (isLoggedIn) {
+//     return <Navigate to='/'/>
+// } else {
+//     return (
+//         <div className='container'>
+//             <div className="form">
+//                 <form>
+//                     <div className="input-container">
+//                         <label>Username </label>
+//                         <input type="text" name="uname" required />
+//                         {renderErrorMessage("uname")}
+//                     </div>
+//                     <div className="input-container">
+//                         <label>Password </label>
+//                         <input type="password" name="pass" required />
+//                         {renderErrorMessage("pass")}
+//                     </div>
+//                     <div className="button-container">
+//                         <input type="submit" />
+//                     </div>
+//                 </form>
+//             </div>
+//         </div>
+//     )
+// }
 }
 
 

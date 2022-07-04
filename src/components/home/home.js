@@ -1,5 +1,5 @@
 import "./home.css";
-import {Link} from "react-router-dom";
+import React from "react";
 
 const Home = () => {
     return (
@@ -8,19 +8,19 @@ const Home = () => {
                 <div className="sidebar">
                     <ul className="sidebar-list">
                         <li className="sidebar-list-option">
-                            <a href="">shoes</a>
+                            <a href="#">shoes</a>
                         </li>
                         <li className="sidebar-list-option">
-                            <a href="">shirts</a>
+                            <a href="#">shirts</a>
                         </li>
                         <li className="sidebar-list-option">
-                            <a href="">hats</a>
+                            <a href="#">hats</a>
                         </li>
                         <li className="sidebar-list-option">
-                            <a href="">watches</a>
+                            <a href="#">watches</a>
                         </li>
                         <li className="sidebar-list-option">
-                            <a href="">glasses</a>
+                            <a href="#">glasses</a>
                         </li>
                     </ul>
                 </div>

@@ -7,3 +7,29 @@
     margin-top: 10px;
     width: 100%;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+}
+
+.input-container {
+    margin-bottom: 10px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container {
+    text-align: center;
+}
+.btn {
+    width: 100%;
+}

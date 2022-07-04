@@ -1,4 +1,5 @@
 import "./about.css";
+import React from "react";
 
 const About = () => {
     return (
@@ -37,33 +38,6 @@ const About = () => {
                 Sed odio
                 morbi quis commodo odio aenean. Hendrerit dolor magna eget est lorem ipsum dolor sit amet.</p>
             <p className='about-content'>Aliquam ut porttitor leo a diam sollicitudin tempor id eu.</p>
-            <p className='about-content'>Nam aliquam sem et tortor consequat id. Posuere ac ut consequat semper viverra
-                nam libero justo laoreet.
-                Aliquam ut porttitor leo a diam sollicitudin tempor id eu. Ut morbi tincidunt augue interdum velit
-                euismod in. Laoreet suspendisse interdum consectetur libero id faucibus. Morbi non arcu risus quis. Ac
-                tincidunt vitae semper quis lectus nulla at volutpat. Lorem ipsum dolor sit amet consectetur adipiscing
-                elit duis tristique. <span className='bold-content'>Ipsum dolor sit amet</span> consectetur adipiscing
-                elit ut. At erat pellentesque
-                adipiscing commodo elit at. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem.
-                Magna fringilla urna porttitor rhoncus dolor.
-                <span className='bold-content'>Consectetur libero idfaucibus nisl</span> feugiat.
-                Sed odio
-                morbi quis commodo odio aenean. Hendrerit dolor magna eget est lorem ipsum dolor sit amet.</p>
-            <p className='about-content'>Aliquam ut porttitor leo a diam sollicitudin tempor id eu. At erat pellentesque
-                adipiscing commodo elit at. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem.
-                Magna fringilla urna porttitor rhoncus dolor.</p>
-            <p className='about-content'>Nam aliquam sem et tortor consequat id. Posuere ac ut consequat semper viverra
-                nam libero justo laoreet.
-                Aliquam ut porttitor leo a diam sollicitudin tempor id eu. Ut morbi tincidunt augue interdum velit
-                euismod in. Laoreet suspendisse interdum consectetur libero id faucibus. Morbi non arcu risus quis. Ac
-                tincidunt vitae semper quis lectus nulla at volutpat. Lorem ipsum dolor sit amet consectetur adipiscing
-                elit duis tristique. <span className='bold-content'>Ipsum dolor sit amet</span> consectetur adipiscing
-                elit ut. At erat pellentesque
-                adipiscing commodo elit at. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem.
-                Magna fringilla urna porttitor rhoncus dolor.
-                <span className='bold-content'>Consectetur libero idfaucibus nisl</span> feugiat.
-                Sed odio
-                morbi quis commodo odio aenean. Hendrerit dolor magna eget est lorem ipsum dolor sit amet.</p>
         </div>
     )
 }
