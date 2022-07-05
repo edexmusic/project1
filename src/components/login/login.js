@@ -1,16 +1,14 @@
 import React, {useState} from "react";
-import {Navigate} from "react-router-dom";
 
 import "./login.css";
 
-const Login = ({isLoggedIn, onLogin}) => {
+const Login = ({}) => {
 
-    const [value, setValue] = React.useState('');
+    // const [value, setValue] = React.useState('');
 
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    // User Login info
     const database = [
         {
             email: "admin@admin.com",
@@ -23,8 +21,8 @@ const Login = ({isLoggedIn, onLogin}) => {
     ];
 
     const errors = {
-        uemail: "invalid email",
-        pass: "invalid password"
+        uemail: "Incorrect Email.",
+        pass: "Incorrect Password."
     };
 
     const handleSubmit = (event) => {
@@ -47,12 +45,12 @@ const Login = ({isLoggedIn, onLogin}) => {
 
     const renderErrorMessage = (name) =>
         name === errorMessages.name && (
-            <div className="error">{errorMessages.message}</div>
+            <div className="login-error">{errorMessages.message}</div>
         );
 
     const renderForm = (
         <div className="form">
-            <div className="title">Sign In</div>
+            <div className="login-title">Sign In</div>
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
                     <input type="email" name="uemail" required placeholder='Email'/>
@@ -63,7 +61,7 @@ const Login = ({isLoggedIn, onLogin}) => {
                     {renderErrorMessage("pass")}
                 </div>
                 <div className="button-container">
-                    <button type="submit" className='btn btn-outline-secondary'>Login</button>
+                    <button type="submit" className='btn btn-outline-secondary login-btn'>Login</button>
                 </div>
             </form>
         </div>
@@ -72,7 +70,7 @@ const Login = ({isLoggedIn, onLogin}) => {
     return (
         <div className="login-container">
             <div className="login-form">
-                {isSubmitted ? <div>Succesfully logged in!</div> : renderForm}
+                {isSubmitted ? <div className="login-verdict">Succesfully logged in!</div> : renderForm}
             </div>
         </div>
     );

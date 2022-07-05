@@ -6,6 +6,8 @@ import {Component} from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Login from "./components/login/login";
 import React from "react";
+import allProducts from "./Data";
+import Details from "./components/details/details";
 
 export default class App extends Component {
     maxId = 0;
@@ -89,8 +91,9 @@ export default class App extends Component {
                 <div className="container">
                     <Header/>
                     <Routes>
-                        <Route path='/' element={<Home/>}/>
+                        <Route path='/' element={<Home state={allProducts}/>}/>
                         <Route path='/about' element={<About/>}/>
+                        <Route path='/:id' element={<Details state={allProducts}/>}/>
                         <Route path='/todo-app'
                                element={<Account todos={todoData} onDeleted={this.deleteItem}
                                                  onToggleDone={this.onToggleDone} onAdd={this.addItem}

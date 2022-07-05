@@ -1,48 +1,37 @@
 import "./home.css";
 import React from "react";
+import Card from "./card/card";
 
-const Home = () => {
+const Home = (state) => {
+
+
     return (
         <div className='container'>
             <div className="home-component">
                 <div className="sidebar">
                     <ul className="sidebar-list">
                         <li className="sidebar-list-option">
-                            <a href="#">shoes</a>
+                            <a href="#">Shoes</a>
                         </li>
                         <li className="sidebar-list-option">
-                            <a href="#">shirts</a>
+                            <a href="#">T-Shirts</a>
                         </li>
                         <li className="sidebar-list-option">
-                            <a href="#">hats</a>
+                            <a href="#">Accessories</a>
                         </li>
                         <li className="sidebar-list-option">
-                            <a href="#">watches</a>
+                            <a href="#">Shorts</a>
                         </li>
                         <li className="sidebar-list-option">
-                            <a href="#">glasses</a>
+                            <a href="#">Bags</a>
                         </li>
                     </ul>
                 </div>
-                <div className="card-holder container">
-                    <div className="cards">
-                        <div className="card">
-                            <p>category: clothes</p>
-                            <h3>Zara shirt - L size</h3>
-                            <h4>40$</h4>
-                        </div>
-                        <div className="card">
-                            <p>category: shoes</p>
-                            <h3>Adidas shoes - 44 size</h3>
-                            <h4>190$</h4>
-                        </div>
-                        <div className="card">
-                            <p>category: shoes</p>
-                            <h3>Nike shoes - 44 size</h3>
-                            <h4>140$</h4>
-                        </div>
-                    </div>
+                <div className="product_container">
+                    {state.state.map((product) => <Card key={product.id} {...product} />)}
                 </div>
+
+
             </div>
         </div>
     )

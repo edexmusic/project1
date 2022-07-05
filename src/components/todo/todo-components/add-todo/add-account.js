@@ -27,13 +27,12 @@ export default class AddAccount extends Component {
     render() {
         return (
             <div>
-                <form className='add-form d-flex' onSubmit={this.onSubmit}>
+                <form className='add-form d-flex'>
                     <input required type="text"
-                           placeholder='Type here your Account'
+                           placeholder='Type here your request'
                            className='form-control search-input'
-                           onChange={this.onLabelChange}
-                           value={this.state.label}/>
-                    <button className='btn btn-primary add-button'> Add Account</button>
+                    />
+                    <button className='btn btn-primary add-button'> Search</button>
                 </form>
             </div>
         )
